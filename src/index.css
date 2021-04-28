@@ -16,7 +16,8 @@ header, footer {
 
 header {
  top: 0;
- height: 75px;
+ height: 74px;
+ padding: 4px;
  border-bottom: solid black 1px;
 }
 
@@ -24,6 +25,6 @@ footer {
  bottom: 0;
  height: 20px;
  font-size: 10px;
- padding-top: 5px;
+ padding-top: 4px;
  border-top: solid black 1px;
 }

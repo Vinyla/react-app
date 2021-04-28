@@ -1,5 +1,5 @@
 const AppFooter = () => {
-  return <footer>App Footer</footer>;
+  return <footer>Copyright © by Vinyla. All rights reserved.</footer>;
 };
 
 export default AppFooter;

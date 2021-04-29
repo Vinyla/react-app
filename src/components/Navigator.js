@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 const Navigator = () => {
   return (
     <div className='navigator'>
-      <Link to='/' style={{ textDecoration: 'none', color: '#3e4498' }}>
+      <Link to='/' className='navigation-link'>
         Home
       </Link>
       &nbsp;|&nbsp;
-      <Link to='/courses' style={{ textDecoration: 'none', color: '#3e4498' }}>
+      <Link to='/courses' className='navigation-link'>
         Courses
       </Link>
       &nbsp;|&nbsp;
-      <Link to='/students' style={{ textDecoration: 'none', color: '#3e4498' }}>
+      <Link to='/students' className='navigation-link'>
         Students
       </Link>
     </div>

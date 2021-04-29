@@ -22,9 +22,7 @@ const Students = () => {
             <th>Year of birth</th>
             <th>Address</th>
             <td>
-              <Link
-                to={`/students/0`}
-                style={{ textDecoration: 'none', color: 'white' }}>
+              <Link to={`/students/0`} className='table-link'>
                 Add new
               </Link>
             </td>
@@ -38,9 +36,7 @@ const Students = () => {
               <td>{s.yearOfBirth}</td>
               <td>{s.address}</td>
               <td>
-                <Link
-                  to={`/students/${s._id}`}
-                  style={{ textDecoration: 'none', color: 'white' }}>
+                <Link to={`/students/${s._id}`} className='table-link'>
                   Edit
                 </Link>
               </td>

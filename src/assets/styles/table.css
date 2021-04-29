@@ -31,3 +31,8 @@ table td:last-child {
  color: white;
  cursor: pointer;
 }
+
+.table-link {
+  text-decoration: none;
+  color: white;
+}

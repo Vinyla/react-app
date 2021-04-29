@@ -19,6 +19,12 @@
   margin-right: 24px;
 }
 
+.navigation-link {
+  text-decoration: none;
+  font-size: 16px;
+  color: #3e4498;
+}
+
 .container {
   width: 96%;
   padding: 12px;

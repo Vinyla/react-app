@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
-import { insert, update, read } from '../services/apiService';
+import { insert, update, read, remove } from '../services/apiService';
 
 const Course = ({ match, history }) => {
   const [id] = useState(match.params.id);
   const [course, setCourse] = useState({
     _id: '0',
     name: '',
-    points: ''
+    points: 0
   });
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const Course = ({ match, history }) => {
   function changeHandler(e) {
     setCourse({
       ...course,
-      [e.target.name]: [e.target.value]
+      [e.target.name]: e.target.value
     });
   }
 
@@ -29,7 +29,7 @@ const Course = ({ match, history }) => {
   };
 
   const save = () => {
-   course._id = undefined;
+    course._id = undefined;
     if (id === '0') {
       insert('courses', course, (data) => {
         if (data) return history.push('/courses');
@@ -41,6 +41,12 @@ const Course = ({ match, history }) => {
         console.log('There was error during save data');
       });
     }
+  };
+
+  const del = () => {
+    remove('courses', id, (data) => {
+      history.push('/courses');
+    });
   };
   return (
     <div className='container'>
@@ -65,9 +71,13 @@ const Course = ({ match, history }) => {
           />
         </div>
         <hr />
-        <div className='left'>
-          <button type='button'>DELETE</button>
-        </div>
+        {id !== '0' && (
+          <div className='left'>
+            <button type='button' onClick={del}>
+              DELETE
+            </button>
+          </div>
+        )}
         <div className='right'>
           <button type='button' onClick={back}>
             BACK

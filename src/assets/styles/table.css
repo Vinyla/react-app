@@ -6,10 +6,11 @@ table {
 table th {
   background-color: #369;
   color: white;
+  padding: 6px;
 }
 
 table tr {
- cursor: pointer;
+ /* cursor: pointer; */
  background-color: #eaeaea;
  height: 18px;
 }
@@ -26,4 +27,7 @@ table td {
 table td:last-child {
  padding: 2px 8px;
  border-right: none;
+ background-color: #369;
+ color: white;
+ cursor: pointer;
 }

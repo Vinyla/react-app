@@ -20,7 +20,7 @@ const Courses = () => {
             <th>Course name</th>
             <th>Points</th>
             <td>
-              <Link to={`/courses/0`} style={{ textDecoration: 'none', color: 'black' }}>
+              <Link to={`/courses/0`} style={{ textDecoration: 'none', color: 'white' }}>
                 Add new
               </Link>
             </td>
@@ -32,7 +32,7 @@ const Courses = () => {
               <td>{c.name}</td>
               <td>{c.points}</td>
               <td>
-                <Link to={`/courses/${c._id}`} style={{ textDecoration: 'none', color: 'black' }}>
+                <Link to={`/courses/${c._id}`} style={{ textDecoration: 'none', color: 'white' }}>
                   Edit
                 </Link>
               </td>

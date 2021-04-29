@@ -56,31 +56,30 @@ const Student = ({ match, history }) => {
       <h2>Student</h2>
       <form className='input-form'>
         <div style={{ margin: '12px 0' }}>
-          <label htmlFor='firstName'>First name: </label>
+          <label htmlFor='firstName'>First Name: </label>
           <input
             type='text'
             name='firstName'
             value={student.firstName}
             onChange={changeHandler}
-          />
+            required />
         </div>
         <div style={{ margin: '12px 0' }}>
-          <label htmlFor='lastName'>Last name: </label>
+          <label htmlFor='lastName'>Last Name: </label>
           <input
             type='text'
             name='lastName'
             value={student.lastName}
             onChange={changeHandler}
-          />
+            required />
         </div>
         <div style={{ margin: '12px 0' }}>
-          <label htmlFor='yearOfBirth'>Year of birth: </label>
+          <label htmlFor='yearOfBirth'>Year of Birth: </label>
           <input
             type='text'
             name='yearOfBirth'
             value={student.yearOfBirth}
-            onChange={changeHandler}
-          />
+            onChange={changeHandler} />
         </div>
         <div style={{ margin: '12px 0' }}>
           <label htmlFor='address'>Address: </label>
@@ -88,8 +87,7 @@ const Student = ({ match, history }) => {
             type='text'
             name='address'
             value={student.address}
-            onChange={changeHandler}
-          />
+            onChange={changeHandler} />
         </div>
         <hr />
         {id !== '0' && (

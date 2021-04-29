@@ -2,13 +2,21 @@
   float: left;
 }
 
+.left img {
+  padding: 14px;
+}
+.left h2 {
+  padding-top: 8px;
+  color: #3e4498;
+}
+
 .right {
   float: right;
 }
 
 .navigator {
- margin-top: 24px;
- margin-right: 24px;
+  margin-top: 24px;
+  margin-right: 24px;
 }
 
 .container {
@@ -20,5 +28,4 @@
 .input-form {
   width: 50%;
   margin: 24px auto;
-  
 }

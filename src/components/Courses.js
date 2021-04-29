@@ -20,7 +20,9 @@ const Courses = () => {
             <th>Course name</th>
             <th>Points</th>
             <td>
-              <Link to={`/courses/0`}>Add new</Link>
+              <Link to={`/courses/0`} style={{ textDecoration: 'none', color: 'black' }}>
+                Add new
+              </Link>
             </td>
           </tr>
         </thead>
@@ -30,7 +32,9 @@ const Courses = () => {
               <td>{c.name}</td>
               <td>{c.points}</td>
               <td>
-                <Link to={`/courses/${c._id}`}>Edit</Link>
+                <Link to={`/courses/${c._id}`} style={{ textDecoration: 'none', color: 'black' }}>
+                  Edit
+                </Link>
               </td>
             </tr>
           ))}

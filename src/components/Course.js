@@ -9,6 +9,8 @@ const Course = ({ match, history }) => {
     points: 0
   });
 
+  const [requiredField, setMessage] = useState('');
+
   useEffect(() => {
     if (id !== '0') {
       read('courses', id, (data) => {
@@ -30,16 +32,20 @@ const Course = ({ match, history }) => {
 
   const save = () => {
     course._id = undefined;
-    if (id === '0') {
-      insert('courses', course, (data) => {
-        if (data) return history.push('/courses');
-        console.log('There was error during save data');
-      });
+    if (!course.name || !course.points) {
+      setMessage('This field is required!');
     } else {
-      update('courses', id, course, (data) => {
-        if (data) return history.push('/courses');
-        console.log('There was error during save data');
-      });
+      if (id === '0') {
+        insert('courses', course, (data) => {
+          if (data) return history.push('/courses');
+          console.log('There was error during save data');
+        });
+      } else {
+        update('courses', id, course, (data) => {
+          if (data) return history.push('/courses');
+          console.log('There was error during save data');
+        });
+      }
     }
   };
 
@@ -59,8 +65,8 @@ const Course = ({ match, history }) => {
             type='text'
             name='name'
             value={course.name}
-            onChange={changeHandler}
-            required />
+            onChange={changeHandler} />
+          <div className='errorMsg'> {requiredField}</div>
         </div>
         <div style={{ margin: '12px 0' }}>
           <label htmlFor='points'>Points: </label>
@@ -68,8 +74,8 @@ const Course = ({ match, history }) => {
             type='text'
             name='points'
             value={course.points}
-            onChange={changeHandler}
-            required />
+            onChange={changeHandler} />
+          <div className='errorMsg'> {requiredField}</div>
         </div>
         <hr />
         {id !== '0' && (

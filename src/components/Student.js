@@ -11,6 +11,8 @@ const Student = ({ match, history }) => {
     address: ''
   });
 
+  const [requiredField, setMessage] = useState('');
+
   useEffect(() => {
     if (id !== '0') {
       read('students', id, (data) => {
@@ -32,18 +34,22 @@ const Student = ({ match, history }) => {
 
   const save = () => {
     student._id = undefined;
-    if (id === '0') {
-      insert('students', student, (data) => {
-        if (data) return history.push('/students');
-        console.log('There was error during save data');
-      });
+    if (!student.firstName || !student.lastName) {
+      setMessage('This field is required!');
     } else {
-      update('students', id, student, (data) => {
-        if (data) return history.push('/students');
-        console.log('There was error during save data');
-      });
+      if (id === '0') {
+        insert('students', student, (data) => {
+          if (data) return history.push('/students');
+          console.log('There was error during save data');
+        });
+      } else {
+        update('students', id, student, (data) => {
+          if (data) return history.push('/students');
+          console.log('There was error during save data');
+        });
+      }
     }
-  };
+  }
 
   const del = () => {
     remove('students', id, (data) => {
@@ -61,8 +67,8 @@ const Student = ({ match, history }) => {
             type='text'
             name='firstName'
             value={student.firstName}
-            onChange={changeHandler}
-            required />
+            onChange={changeHandler} />
+          <div className='errorMsg'> {requiredField}</div>
         </div>
         <div style={{ margin: '12px 0' }}>
           <label htmlFor='lastName'>Last Name: </label>
@@ -70,8 +76,8 @@ const Student = ({ match, history }) => {
             type='text'
             name='lastName'
             value={student.lastName}
-            onChange={changeHandler}
-            required />
+            onChange={changeHandler} />
+          <div className='errorMsg'> {requiredField}</div>
         </div>
         <div style={{ margin: '12px 0' }}>
           <label htmlFor='yearOfBirth'>Year of Birth: </label>
@@ -79,7 +85,8 @@ const Student = ({ match, history }) => {
             type='text'
             name='yearOfBirth'
             value={student.yearOfBirth}
-            onChange={changeHandler} />
+            onChange={changeHandler}
+          />
         </div>
         <div style={{ margin: '12px 0' }}>
           <label htmlFor='address'>Address: </label>
@@ -87,7 +94,8 @@ const Student = ({ match, history }) => {
             type='text'
             name='address'
             value={student.address}
-            onChange={changeHandler} />
+            onChange={changeHandler}
+          />
         </div>
         <hr />
         {id !== '0' && (

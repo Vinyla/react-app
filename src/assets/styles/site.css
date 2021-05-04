@@ -41,6 +41,11 @@
   width: 200px;
 }
 
-.message {
+.welcomeMessage {
   font-size: 2.5em;
+}
+
+.errorMsg {
+  font-size: 10px;
+  color: red;
 }

@@ -1,10 +1,10 @@
 table {
   margin: 24px auto;
-  border: 2px solid #369;
+  border: 2px solid #3e4498;
 }
 
 table th {
-  background-color: #369;
+  background-color: #3e4498;
   color: white;
   padding: 6px;
 }
@@ -21,13 +21,13 @@ table tr:nth-child(2n+1) {
 
 table td {
  padding: 2px 8px;
- border-right: 1px solid #369;
+ border-right: 1px solid #3e4498;
 }
 
 table td:last-child {
  padding: 2px 8px;
  border-right: none;
- background-color: #369;
+ background-color: #3e4498;
  color: white;
  cursor: pointer;
 }

@@ -49,7 +49,7 @@ const Student = ({ match, history }) => {
         });
       }
     }
-  }
+  };
 
   const del = () => {
     remove('students', id, (data) => {
@@ -61,41 +61,55 @@ const Student = ({ match, history }) => {
     <div className='container'>
       <h2>Student</h2>
       <form className='input-form'>
-        <div style={{ margin: '12px 0' }}>
-          <label htmlFor='firstName'>First Name: </label>
-          <input
-            type='text'
-            name='firstName'
-            value={student.firstName}
-            onChange={changeHandler} />
-          <div className='errorMsg'> {requiredField}</div>
+        <div className='field'>
+          <div className='label'>
+            <label htmlFor='firstName'>First Name: </label>
+          </div>
+          <div>
+            <input
+              type='text'
+              name='firstName'
+              value={student.firstName}
+              onChange={changeHandler} />
+            <div className='errorMsg'> {requiredField}</div>
+          </div>
         </div>
-        <div style={{ margin: '12px 0' }}>
-          <label htmlFor='lastName'>Last Name: </label>
-          <input
-            type='text'
-            name='lastName'
-            value={student.lastName}
-            onChange={changeHandler} />
-          <div className='errorMsg'> {requiredField}</div>
+        <div className='field'>
+          <div className='label'>
+            <label htmlFor='lastName'>Last Name: </label>
+          </div>
+          <div>
+            <input
+              type='text'
+              name='lastName'
+              value={student.lastName}
+              onChange={changeHandler} />
+            <div className='errorMsg'> {requiredField}</div>
+          </div>
         </div>
-        <div style={{ margin: '12px 0' }}>
-          <label htmlFor='yearOfBirth'>Year of Birth: </label>
-          <input
-            type='text'
-            name='yearOfBirth'
-            value={student.yearOfBirth}
-            onChange={changeHandler}
-          />
+        <div className='field'>
+          <div className='label'>
+            <label htmlFor='yearOfBirth'>Year of Birth: </label>
+          </div>
+          <div>
+            <input
+              type='text'
+              name='yearOfBirth'
+              value={student.yearOfBirth}
+              onChange={changeHandler} />
+          </div>
         </div>
-        <div style={{ margin: '12px 0' }}>
-          <label htmlFor='address'>Address: </label>
-          <input
-            type='text'
-            name='address'
-            value={student.address}
-            onChange={changeHandler}
-          />
+        <div className='field'>
+          <div className='label'>
+            <label htmlFor='address'>Address: </label>
+          </div>
+          <div>
+            <input
+              type='text'
+              name='address'
+              value={student.address}
+              onChange={changeHandler} />
+          </div>
         </div>
         <hr />
         {id !== '0' && (

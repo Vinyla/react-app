@@ -59,23 +59,31 @@ const Course = ({ match, history }) => {
     <div className='container'>
       <h2>Course</h2>
       <form className='input-form'>
-        <div style={{ margin: '12px 0' }}>
-          <label htmlFor='name'>Name: </label>
-          <input
-            type='text'
-            name='name'
-            value={course.name}
-            onChange={changeHandler} />
-          <div className='errorMsg'> {requiredField}</div>
+        <div className='field'>
+          <div className='label'>
+            <label htmlFor='name'>Name: </label>
+          </div>
+          <div>
+            <input
+              type='text'
+              name='name'
+              value={course.name}
+              onChange={changeHandler} />
+            <div className='errorMsg'> {requiredField}</div>
+          </div>
         </div>
-        <div style={{ margin: '12px 0' }}>
-          <label htmlFor='points'>Points: </label>
-          <input
-            type='text'
-            name='points'
-            value={course.points}
-            onChange={changeHandler} />
-          <div className='errorMsg'> {requiredField}</div>
+        <div className='field'>
+          <div className='label'>
+            <label htmlFor='points'>Points: </label>
+          </div>
+          <div>
+            <input
+              type='text'
+              name='points'
+              value={course.points}
+              onChange={changeHandler} />
+            <div className='errorMsg'> {requiredField}</div>
+          </div>
         </div>
         <hr />
         {id !== '0' && (

@@ -1,0 +1,40 @@
+.input-form {
+  width: 50%;
+  margin: 34px auto;
+}
+
+.field {
+  margin: 12px 22px;
+  display: flex;
+  justify-content: center;
+}
+
+.label {
+  height: 36px;
+  display: inline-block;
+  width: 140px;
+  text-align: left;
+}
+
+input {
+  width: 200px;
+}
+
+button {
+  padding: 6px 16px;
+  color: white;
+  background-color: #3e4498;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.welcomeMessage {
+  font-size: 2.5em;
+}
+
+.errorMsg {
+  font-size: 10px;
+  color: red;
+}

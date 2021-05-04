@@ -28,24 +28,11 @@
 .container {
   width: 96%;
   padding: 12px;
+  margin: 0 auto;
   text-align: center;
-}
-
-.input-form {
-  width: 50%;
-  margin: 24px auto;
 }
 
 .site-logo {
   padding: 24px;
-  width: 200px;
-}
-
-.welcomeMessage {
-  font-size: 2.5em;
-}
-
-.errorMsg {
-  font-size: 10px;
-  color: red;
+  width: 400px;
 }

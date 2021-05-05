@@ -69,7 +69,7 @@ const Course = ({ match, history }) => {
               name='name'
               value={course.name}
               onChange={changeHandler} />
-            <div className='errorMsg'> {requiredField}</div>
+            <div className='errorMsg'>{requiredField}</div>
           </div>
         </div>
         <div className='field'>
@@ -82,7 +82,7 @@ const Course = ({ match, history }) => {
               name='points'
               value={course.points}
               onChange={changeHandler} />
-            <div className='errorMsg'> {requiredField}</div>
+            <div className='errorMsg'>{requiredField}</div>
           </div>
         </div>
         <hr />
